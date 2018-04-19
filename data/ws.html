@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<script>
+	var wxUrl='ws://www.chjdwl.site:8812';
+	var webSocket=new WebSocket(wxUrl);
+	webSocket.onopen=function(evt){
+		webSocket.send('hello world');
+			console.log('success')
+	};
+	webSocket.onmessage=function(evt){
+		console.log(evt);
+	}
+	webSocket.onclose=function(evt){
+		console.log(evt);
+	}
+	
+	webSocket.onerror=function(evt,e){
+		console.log(evt,e);
+	}
+
+</script>
+
+</body>
+</html>
